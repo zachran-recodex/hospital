@@ -3,50 +3,73 @@
 @section('meta_tag')
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="">
-    <meta name="keywords" content="">
-    <meta name="author" content="RECODEX">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+        content="Rumah Sakit menyediakan layanan kesehatan berkualitas dengan dokter berpengalaman dan fasilitas modern. Kami berkomitmen untuk perawatan yang terpercaya, profesional, dan penuh kasih sayang.">
+    <meta name="keywords"
+        content="rumah sakit, layanan kesehatan, dokter spesialis, konsultasi medis, fasilitas medis, perawatan kesehatan, klinik kesehatan, kesehatan, layanan kesehatan terpercaya">
+    <meta name="author" content="RECODEX">
     <meta name="robots" content="index, follow">
     <meta name="theme-color" content="#27A9E1">
 
-    <link rel="canonical" href="{{ url()->current() }}">
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Rumah Sakit - Layanan Kesehatan Terpercaya">
+    <meta property="og:description"
+        content="Rumah Sakit menyediakan layanan kesehatan berkualitas dengan dokter berpengalaman dan fasilitas modern.">
+    <meta property="og:image" content="{{ asset('images/og-image.png') }}">
+    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="og:type" content="website">
 
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Rumah Sakit - Layanan Kesehatan Terpercaya">
+    <meta name="twitter:description"
+        content="Rumah Sakit menyediakan layanan kesehatan berkualitas dengan dokter berpengalaman dan fasilitas modern.">
+    <meta name="twitter:image" content="{{ asset('images/og-image.png') }}">
+
+    <link rel="canonical" href="{{ url()->current() }}">
     <title>Rumah Sakit | Web Template by Recodex</title>
 @endsection
 
 @section('content')
-    <section class="h-screen z-10">
-        <div
-            class="absolute bg-[#C4C4C4] block w-full h-full object-cover -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
+    <section class="h-screen z-10 relative">
+        <div class="absolute bg-cover bg-center w-full h-full top-0 left-0"
+            style="background-image: url('/images/hero.jpg')">
+            <!-- Overlay Hitam -->
+            <div class="absolute top-0 left-0 w-full h-full bg-black opacity-50"></div>
             <div class="relative h-full flex items-center">
-                <div class="container-main pt-[112px]">
-                    <div class="flex flex-col justify-center items-start w-1/2 gap-4">
-                        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold">
+                <div class="container-main pt-[112px] px-4 md:px-0">
+                    <div class="flex flex-col justify-center items-start gap-4 max-w-full md:w-3/4 lg:w-1/2 text-white">
+                        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
                             Perawatan Terpercaya Kapan Saja dan Di Mana Saja
                         </h1>
-                        <h2 class="leading-relaxed text-lg sm:text-xl">
+                        <h2 class="text-lg sm:text-xl leading-relaxed">
                             Kesejahteraan Anda adalah Misi Kami - Pendekatan Layanan Kesehatan yang Mulus, Dihadirkan oleh
                             Para Ahli yang Peduli
                         </h2>
-                        <div class="flex gap-[26px]">
+                        <div class="flex gap-4 flex-wrap">
                             <a href=""
-                                class="w-[222px] h-[60px] flex justify-center items-center text-lg text-white transition bg-picton-blue-500 rounded-lg">
+                                class="w-full md:w-[222px] h-[60px] flex justify-center items-center text-lg text-white transition bg-picton-blue-500 rounded-lg">
                                 Pesan Janji Temu
                             </a>
                             <a href=""
-                                class="w-[222px] h-[60px] flex justify-center items-center text-lg text-white transition bg-chateau-green-500 rounded-lg">
+                                class="w-full md:w-[222px] h-[60px] flex justify-center items-center text-lg text-white transition bg-chateau-green-500 rounded-lg">
                                 Learn More
                             </a>
                         </div>
-                        <div class="flex items-center">
-                            <div class="w-[84px] h-[84px] bg-[#E7E7E7] rounded-full"></div>
-                            <div class="w-[84px] h-[84px] bg-[#D6D6D6] rounded-full -ml-5"></div>
-                            <div class="w-[84px] h-[84px] bg-[#E7E7E7] rounded-full -ml-5"></div>
-                            <div class="w-[84px] h-[84px] bg-[#D6D6D6] rounded-full -ml-5"></div>
+                        <div class="flex items-center gap-2 mt-4">
+                            <div class="w-[60px] h-[60px] md:w-[84px] md:h-[84px] bg-[#E7E7E7] rounded-full"></div>
+                            <div class="w-[60px] h-[60px] md:w-[84px] md:h-[84px] bg-[#D6D6D6] rounded-full -ml-3 md:-ml-5">
+                            </div>
+                            <div class="w-[60px] h-[60px] md:w-[84px] md:h-[84px] bg-[#E7E7E7] rounded-full -ml-3 md:-ml-5">
+                            </div>
+                            <div class="w-[60px] h-[60px] md:w-[84px] md:h-[84px] bg-[#D6D6D6] rounded-full -ml-3 md:-ml-5">
+                            </div>
                         </div>
-                        <p class="text-2xl font-semibold">
+                        <p class="text-2xl font-semibold mt-2">
                             20,000+
                         </p>
                         <p class="text-md">
@@ -55,17 +78,26 @@
                     </div>
                 </div>
             </div>
+        </div>
     </section>
 
+
     <section class="py-main">
-        <div class="container-main grid grid-cols-2">
+        <div class="container-main grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Gambar atau konten kiri -->
             <div
-                class="bg-[#C4C4C4] w-[500px] h-[626px] rounded-tr-[115px] rounded-br-[115px] rounded-bl-[115px] rounded-tl-[0px]">
+                class="bg-[#C4C4C4] w-full h-[400px] md:h-[626px] rounded-tr-[115px] rounded-br-[115px] rounded-bl-[115px] rounded-tl-[0px]">
+                <!-- Bisa menambahkan gambar atau konten lain di sini -->
             </div>
+            <!-- Konten kanan -->
             <div class="flex flex-col justify-center items-start gap-4">
-                <h3 class="text-4xl font-bold">Kesehatan Anda, <span class="text-picton-blue-500">Prioritas Kami</span></h3>
-                <p>Berkomitmen untuk Memberikan Perawatan Berkualitas dan Penuh Kasih kepada Setiap Pasien</p>
-                <p>
+                <h3 class="text-3xl sm:text-4xl font-bold">
+                    Kesehatan Anda, <span class="text-picton-blue-500">Prioritas Kami</span>
+                </h3>
+                <p class="text-sm sm:text-base">
+                    Berkomitmen untuk Memberikan Perawatan Berkualitas dan Penuh Kasih kepada Setiap Pasien
+                </p>
+                <p class="text-sm sm:text-base">
                     Di Rumah Sakit, kami didorong oleh satu misi: untuk membuat layanan kesehatan dapat diakses, penuh
                     kasih, dan sepenuhnya fokus pada Anda. Tim medis kami yang berpengalaman berkomitmen untuk memberikan
                     perawatan yang dipersonalisasi dan proaktif yang mengatasi kebutuhan unik Anda. Dengan fasilitas canggih
@@ -74,20 +106,22 @@
                     Karena di Rumah Sakit, kesejahteraan Anda adalah prioritas kami.
                 </p>
                 <a href=""
-                    class="w-[182px] h-[56px] flex justify-center items-center text-lg text-white bg-picton-blue-500 rounded-lg">
+                    class="w-[182px] h-[56px] flex justify-center items-center text-lg text-white bg-picton-blue-500 rounded-lg mt-4">
                     Baca Selengkapnya
                 </a>
             </div>
+        </div>
     </section>
 
     <section class="py-main">
         <div class="container-main flex flex-col items-center gap-4">
-            <h3 class="text-4xl font-bold">Perawatan Komprehensif untuk <span class="text-picton-blue-500">Setiap
-                    Kebutuhan</span></h3>
-            <p>Dari Pencegahan hingga Perawatan, Kami Ada untuk Anda</p>
-            <div class="grid grid-cols-3 w-full gap-6 text-picton-blue-500">
+            <h3 class="text-3xl sm:text-4xl font-bold text-center">
+                Perawatan Komprehensif untuk <span class="text-picton-blue-500">Setiap Kebutuhan</span>
+            </h3>
+            <p class="text-center text-sm sm:text-base">Dari Pencegahan hingga Perawatan, Kami Ada untuk Anda</p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 w-full text-picton-blue-500">
                 <div
-                    class="w-[384px] h-[190px] px-12 rounded-lg border border-picton-blue-500 flex justify-center items-center gap-4">
+                    class="w-full h-[190px] px-6 sm:px-12 rounded-lg border border-picton-blue-500 flex justify-center items-center gap-4">
                     <svg xmlns="http://www.w3.org/2000/svg" width="66" height="84" viewBox="0 0 66 84"
                         fill="none">
                         <path
@@ -97,7 +131,7 @@
                     <p class="text-2xl font-semibold">Perawatan Pencegahan</p>
                 </div>
                 <div
-                    class="w-[384px] h-[190px] px-12 rounded-lg border border-picton-blue-500 bg-picton-blue-500 flex justify-center items-center gap-4">
+                    class="w-full h-[190px] px-6 sm:px-12 rounded-lg border border-picton-blue-500 bg-picton-blue-500 flex justify-center items-center gap-4">
                     <svg xmlns="http://www.w3.org/2000/svg" width="85" height="84" viewBox="0 0 85 84"
                         fill="none">
                         <path
@@ -110,7 +144,7 @@
                     <p class="text-2xl font-semibold text-white">Layanan Diagnostik</p>
                 </div>
                 <div
-                    class="w-[384px] h-[190px] px-12 rounded-lg border border-picton-blue-500 flex justify-center items-center gap-4">
+                    class="w-full h-[190px] px-6 sm:px-12 rounded-lg border border-picton-blue-500 flex justify-center items-center gap-4">
                     <svg xmlns="http://www.w3.org/2000/svg" width="63" height="64" viewBox="0 0 63 64"
                         fill="none">
                         <path
@@ -120,7 +154,7 @@
                     <p class="text-2xl font-semibold">Manajemen Kondisi Kronis</p>
                 </div>
                 <div
-                    class="w-[384px] h-[190px] px-12 rounded-lg border border-picton-blue-500 flex justify-center items-center gap-4">
+                    class="w-full h-[190px] px-6 sm:px-12 rounded-lg border border-picton-blue-500 flex justify-center items-center gap-4">
                     <svg xmlns="http://www.w3.org/2000/svg" width="60" height="74" viewBox="0 0 60 74"
                         fill="none">
                         <path fill-rule="evenodd" clip-rule="evenodd"
@@ -130,7 +164,7 @@
                     <p class="text-2xl font-semibold">Kesehatan Wanita</p>
                 </div>
                 <div
-                    class="w-[384px] h-[190px] px-12 rounded-lg border border-picton-blue-500 flex justify-center items-center gap-4">
+                    class="w-full h-[190px] px-6 sm:px-12 rounded-lg border border-picton-blue-500 flex justify-center items-center gap-4">
                     <svg xmlns="http://www.w3.org/2000/svg" width="67" height="74" viewBox="0 0 67 74"
                         fill="none">
                         <path
@@ -140,7 +174,7 @@
                     <p class="text-2xl font-semibold">Dukungan Kesehatan Mental</p>
                 </div>
                 <div
-                    class="w-[384px] h-[190px] px-12 rounded-lg border border-picton-blue-500 flex justify-center items-center gap-4">
+                    class="w-full h-[190px] px-6 sm:px-12 rounded-lg border border-picton-blue-500 flex justify-center items-center gap-4">
                     <svg xmlns="http://www.w3.org/2000/svg" width="74" height="74" viewBox="0 0 74 74"
                         fill="none">
                         <path
@@ -157,20 +191,21 @@
     </section>
 
     <section class="py-main">
-        <div class="container-main flex-col space-y-8">
+        <div class="container-main flex flex-col space-y-8">
             <div class="flex justify-between items-center">
-                <div class="">
-                    <h3 class="text-4xl font-bold">Dokter Ahli yang <span class="text-picton-blue-500">Dapat Anda
-                            Percayai</span>
+                <div>
+                    <h3 class="text-3xl sm:text-4xl font-bold">
+                        Dokter Ahli yang <span class="text-picton-blue-500">Dapat Anda Percayai</span>
                     </h3>
-                    <p>Profesional Berdedikasi, Siap Memberikan Perawatan Luar Biasa</p>
+                    <p class="text-sm sm:text-base">Profesional Berdedikasi, Siap Memberikan Perawatan Luar Biasa</p>
                 </div>
                 <a href=""
                     class="w-[174px] h-[50px] bg-picton-blue-500 text-white rounded-lg flex justify-center items-center">
                     Lihat Selengkapnya
                 </a>
             </div>
-            <div class="grid grid-cols-3 gap-8 w-full">
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 w-full">
                 <div class="flex flex-col p-6 justify-between items-center gap-4 border border-picton-blue-500 rounded-lg">
                     <div class="flex gap-6 items-center w-full">
                         <div class="min-w-[110px] h-[110px] bg-[#D9D9D9] rounded-full"></div>
@@ -197,7 +232,7 @@
                             </svg>
                         </div>
                     </div>
-                    <p class="text-justify">
+                    <p class="text-justify text-sm sm:text-base">
                         Dengan lebih dari 10 tahun pengalaman, Dr. Ahmad percaya dalam membangun hubungan jangka panjang
                         dengan pasien dan keluarga mereka.
                     </p>
@@ -237,7 +272,7 @@
                             </svg>
                         </div>
                     </div>
-                    <p class="text-justify">
+                    <p class="text-justify text-sm sm:text-base">
                         Dr. Asep dikenal dengan pendekatannya yang holistik dalam perawatan pasien. Ia menggabungkan
                         pengetahuan luasnya dalam kedokteran dalam dengan minat yang tulus.
                     </p>
@@ -277,7 +312,7 @@
                             </svg>
                         </div>
                     </div>
-                    <p class="text-justify">
+                    <p class="text-justify text-sm sm:text-base">
                         Dr. Ria memiliki kecintaan terhadap kesehatan anak-anak. Dengan sikapnya yang hangat dan ramah,
                         ia menciptakan lingkungan yang nyaman untuk anak-anak dan orang tua mereka.
                     </p>

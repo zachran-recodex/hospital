@@ -22,39 +22,53 @@
 
 <body class="bg-[#FAFAFA]">
 
-    <header class="py-[35px] fixed w-full z-50 top-0 left-0 shadow-lg bg-white">
+    <header class="py-4 fixed w-full z-50 top-0 left-0 shadow-lg bg-white">
         <nav class="container-main h-[42px] flex justify-between items-center">
-            <a href="">
-                <h1 class="text-picton-blue-500 text-2xl font-bold">RUMAH <span
-                        class="text-chateau-green-500">SAKIT</span>
-                </h1>
+            <a href="" class="text-picton-blue-500 text-2xl font-bold">
+                RUMAH <span class="text-chateau-green-500">SAKIT</span>
             </a>
-            <div class="flex justify-center items-center gap-[25px]">
-                <a href="">
-                    Beranda
-                </a>
-                <a href="">
-                    Jadwal Dokter
-                </a>
-                <a href="">
-                    Medical Check Up
-                </a>
-                <a href="">
-                    Fasilitas & Layanan
-                </a>
-                <a href="">
-                    Hubungi Kami
-                </a>
-                <a href="">
-                    Komunitas
-                </a>
+            <div class="hidden md:flex justify-center items-center gap-6">
+                <a href="" class="hover:text-picton-blue-500">Beranda</a>
+                <a href="" class="hover:text-picton-blue-500">Jadwal Dokter</a>
+                <a href="" class="hover:text-picton-blue-500">Medical Check Up</a>
+                <a href="" class="hover:text-picton-blue-500">Fasilitas & Layanan</a>
+                <a href="" class="hover:text-picton-blue-500">Hubungi Kami</a>
+                <a href="" class="hover:text-picton-blue-500">Komunitas</a>
             </div>
-            <a href=""
+            <button
                 class="bg-gradient-to-r from-picton-blue-500 to-chateau-green-500 w-[126px] h-[38px] flex justify-center items-center rounded-lg text-white">
                 Konsultasi
-            </a>
+            </button>
+
+            <!-- Mobile Menu Button -->
+            <button id="menu-btn" class="md:hidden flex items-center text-picton-blue-500 focus:outline-none">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
         </nav>
+
+        <!-- Mobile Menu -->
+        <div id="menu" class="md:hidden hidden flex-col gap-4 bg-white shadow-lg mt-2 p-4">
+            <a href="" class="block hover:text-picton-blue-500">Beranda</a>
+            <a href="" class="block hover:text-picton-blue-500">Jadwal Dokter</a>
+            <a href="" class="block hover:text-picton-blue-500">Medical Check Up</a>
+            <a href="" class="block hover:text-picton-blue-500">Fasilitas & Layanan</a>
+            <a href="" class="block hover:text-picton-blue-500">Hubungi Kami</a>
+            <a href="" class="block hover:text-picton-blue-500">Komunitas</a>
+        </div>
     </header>
+
+    <script>
+        // Toggle mobile menu visibility
+        const menuBtn = document.getElementById('menu-btn');
+        const menu = document.getElementById('menu');
+
+        menuBtn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+    </script>
 
     <main>
         @yield('content')

@@ -13,7 +13,7 @@
 
     <link rel="canonical" href="{{ url()->current() }}">
 
-    <title>Hospital</title>
+    <title>Rumah Sakit | Web Template by Recodex</title>
 @endsection
 
 @section('content')
